@@ -1,17 +1,23 @@
-# Load a text file, remove whitespace
-# Check user input for where to check for punctuation mark
-# Loop through user value from 1 to the specified value
-    # Start empty string to hold the translation
-    # Initiate a counter
-    # Start the found marker and set to false
-    # Loop through the characters
-        # If a character is a punctuation mark
-            # Counter = 0
-            # First-found = True
-        # Otherwise, if first-found is True
-            # Counter++
-        # If counter = lookahead value
-            # Add character to the translation string
-        # Display the translation to the user.
+import sys
+import string
 
-        
+# Load a text file, remove whitespace
+def loadText(file):
+    with open(file) as fl:
+        return fl.read().strip()
+# Check punctuation mark position
+def checkPosition(message, userInput):
+    for i in range(1, userInput + 1):
+        text = ''
+        count = 0
+        firstPM = 0
+        for char in message:
+            if char in string.punctuation:
+                count = 0
+                firstPM = True
+            elif firstPM is True:
+                count += 1
+            if count == i:
+                text += char
+        print("Chosen offset = {} after punctuation = {}", format(i, text))
+    print()
