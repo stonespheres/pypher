@@ -1,6 +1,7 @@
 # Pypher
 Steganography is the practice of concealing messages so well, their very existence isn't even suspected.
 
+## Null
 This program works using the *null cipher*. Unfortunately it only presents a list at the moment, so you'd probably suspect a message is there.
 
 The following is some output of a phrase:
@@ -25,3 +26,5 @@ cabala
 aediles
 aasvogel
 ```
+## Vig
+A tribute to the Vigenere cypher.
